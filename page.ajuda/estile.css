@@ -1,0 +1,302 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+/* Track da barra de rolagem (fundo) */
+::-webkit-scrollbar-track {
+    border-radius: 0; /* Bordas arredondadas */
+}
+
+/* Barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background:rgb(0, 62, 58); /* Cor da barra */
+    border-radius: 2px 0 0 2px; /* Bordas arredondadas */
+}
+
+/* Estilo para efeito fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body{
+    background:rgb(0, 39, 36);
+}
+header{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.logo-site{
+    height:15vh;
+    color:white;
+    font-size:2rem;
+    text-decoration:none;
+    text-align:center;
+    font-family:"Questrial", sans-serif;
+    position:relative;
+    top:2rem;
+    left:2rem;
+}
+.Img-barra-header{
+    height:8vh;
+    position:absolute;
+    left:80rem;
+    top:5rem !important;
+}
+
+.btn-abrir-img{
+    height:5vh;
+}
+#menu{
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+    transition: 600ms all;
+    filter: opacity(90%);
+    display: none;
+    background-color:rgb(0, 87, 81);
+    border-radius:3% 0 0 3%;
+}
+
+#menu a {
+    font-family: "Questrial", sans-serif;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    display: block;
+    padding: 12px 10px 12px 32px ;
+    border:1px solid transparent;
+    transition:border 400ms;
+}
+
+#menu a:hover{
+    color:transparent;
+    color:white;
+}
+.btn-abrir{
+    width: 65px;
+}
+.btn-abrir:hover{
+    opacity: 70%;
+    cursor:pointer;
+}
+
+/*CORPO SITE*/
+
+.section-slogan{
+    height:400px;
+    background:linear-gradient(
+        rgb(0, 140, 131)
+    );
+}
+.title-main-section-slogan{
+    color:white;
+    font-size:2rem;
+    text-align:center;
+    font-family:"Questrial", sans-serif;
+}
+.title-main-section-slogan a{
+    color:rgb(0, 87, 81);
+    text-decoration:none;
+    transition:600ms;
+}
+.title-main-section-slogan a:hover{
+    color:white;
+}
+
+/*SECTION SOBRE NÓS*/
+
+.div-main-section-about:hover{
+    opacity:70%;
+}
+.div-main-section-about{
+    transition:600ms;
+}
+.img-logo-section-about{
+    height:20vh;
+}
+.title-main-section-about{
+    color:white ;
+    font-size:2rem;
+    font-family:"Questrial", sans-serif;
+}
+.div-text-section-about{
+    width:70%;
+}
+.text-about{
+    font-size:1.7rem;
+    color:#f7f4e4;
+    font-family:"Questrial", sans-serif;
+    text-align:justify;
+}
+
+/*  */
+
+
+/*section missão visão e valores*/
+
+.section-mvv{
+    display:flex;
+    justify-content:space-evenly;
+    border-radius:10px;
+}
+.card {
+    width: 25rem;
+    height: 5rem;
+    background: transparent;
+    transition: 700ms ease;
+    overflow: hidden; /* Garante que o texto não vaze durante a animação */
+
+}
+.card-03{
+    transition:2s;
+}
+.card-03:hover {
+    height: 35rem;
+}
+.card-01, .card-02:hover{
+    height:20rem;
+}
+.card:hover .title-card {
+    top: 1.2rem;
+}
+.card:hover .text-div-card {
+    opacity: 1;
+    visibility: visible; /* Mostra o texto quando em hover */
+    transition-delay: 0.5s; /* Atraso para coincidir com a transição da altura */
+}
+
+.title-card {
+    color: #F0FFFF;
+    font-size: 2rem;
+    font-family: "Questrial", sans-serif;
+    text-align: center;
+    position: relative;
+    top: 1.6rem;
+    transition: 400ms;
+}
+
+.text-div-card {
+    color: white;
+    font-size: 1.3rem;
+    text-align: justify;
+    font-family:"Questrial", sans-serif;
+    opacity: 0; /* Oculta inicialmente */
+    visibility: hidden; /* Evita que o texto ocupe espaço antes de aparecer */
+    transition: opacity 0.4s ease, visibility 0.4s ease; /* Transição suave */
+}
+
+    /*formulário*/
+    
+.section-forms{
+    display:flex;
+    justify-content:space-evenly;
+}
+.title-forms{
+    font-size:3rem;
+    font-family:"Questrial", sans-serif;
+    color:white;
+    text-align:center;
+}
+.sub-title-forms{
+    font-size:1.3rem;
+    font-family:"Questrial", sans-serif;
+    color:white;
+    font-weight:normal;
+    text-align:center;
+}
+.title-contato-formulario{
+    color:white;
+    font-size:1.7rem;
+    font-family:"Questrial", sans-serif;
+    font-weight:100px;
+}
+.formulario{
+    height:25rem;
+    width:25rem;
+}
+.mesage{
+    width:40rem;
+    height:2rem;
+    border-radius:0.5rem;
+    text-align:center;
+    font-size:1rem;
+    border:2px solid white;
+}
+.box-mesage{
+    height:4rem;
+}
+.title-main-forms{
+    color:white;
+    font-family:"Questrial", sans-serif;
+    font-weight:normal;
+}
+.button-submit{
+    width:40rem;
+    border-radius:10px;
+    border:2px solid white;
+    background:white;
+    height:2rem;
+    font-size:1rem;
+    transition:900ms;
+}
+.button-submit:hover{
+    background:transparent;
+    border:none;
+    color:white;
+}
+
+/*Contato*/
+
+.div-contato{
+    position:relative;
+    top:8rem;
+}
+.title-forma-contato{
+    font-size:1.7rem;
+    display:flex;
+    font-family:"Questrial", sans-serif;
+    color:white;
+    font-weight:normal;
+    cursor:pointer;
+}
+.endereco-contato{
+    color:white;
+    font-family:"Questrial", sans-serif;
+    font-size:1.2rem;
+    font-weight:normal;
+    margin-left:5px;
+}
+
+/*footer*/
+
+.div-copy-footer{
+    text-align:center;
+    padding-top:50px;
+    position:relative;
+    bottom:-20rem;
+}
+.text-footer-copy{
+    font-size:1rem;
+    color:
+    white;
+    font-weight:normal;
+    font-family:"Questrial", sans-serif;
+}
