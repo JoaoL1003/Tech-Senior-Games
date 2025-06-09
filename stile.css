@@ -1,0 +1,439 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+/* Track da barra de rolagem (fundo) */
+::-webkit-scrollbar-track {
+    background:rgb(0, 39, 36) ; /* Cor do fundo da barra */
+    border-radius: 0; /* Bordas arredondadas */
+}
+
+/* Barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background:rgb(0, 62, 58); /* Cor da barra */
+    border-radius: 2px 0 0 2px; /* Bordas arredondadas */
+}
+:root{
+    --building-color1:rgb(22, 45, 59);
+    --building-color2:rgb(9, 20, 28);
+    --building-color3:rgb(2, 1, 33);
+    --building-color4:rgb(255, 255, 255);
+    --building-color5:rgb(131, 114, 0);
+    --building-color6:rgb(211, 183, 0);
+    --building-color7:rgb(0, 140, 131);
+    --building-color8:rgb(0, 0, 0);
+    --building-color9:rgb(0, 87, 81);
+}
+/*
+::-webkit-scrollbar: Modifica a largura da barra de rolagem.
+::-webkit-scrollbar-track: Estiliza o trilho (track) da barra de rolagem.
+::-webkit-scrollbar-thumb: Personaliza a parte "arrastável" da barra.
+::-webkit-scrollbar-thumb:hover: Altera a aparência quando o usuário passa o mouse sobre a barra.
+*/
+::-webkit-scrollbar{
+    scroll-behavior: smooth;
+}
+
+/*Fontes*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+/*CORPO SITE*/
+
+body{
+    background: linear-gradient(
+        var(--building-color7),
+        black,
+        var(--building-color7),
+        black
+    );
+}
+.div1-header{
+    display:flex;
+    justify-content:center;
+    height:6vh;
+}
+.logo-main{
+    height:10vh;
+    border-radius:20%;
+
+}
+.title-main{
+    color:rgb(255, 255, 255);
+    font-size:2rem;
+    font-family: "Bree Serif", serif;
+    font-weight: normal;
+    font-style: normal;
+    margin-top:37px;
+    display:none;
+} 
+.div2-header{
+    display:flex;
+    justify-content:right;
+    height:6vh; 
+    margin-top:-30px;
+}
+.btn-abrir-img{
+    height:5vh;
+}
+#menu{
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+    transition: 600ms all;
+    filter: opacity(90%);
+    display: none;
+    background-color:rgba(0, 87, 81, 0.693);
+    border-radius:3% 0 0 3%;
+}
+
+#menu a {
+    font-family: "Questrial", sans-serif;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    display: block;
+    padding: 12px 10px 12px 32px ;
+    border:1px solid transparent;
+    transition:border 400ms;
+}
+
+#menu a:hover{
+    color:transparent;
+    color:white;
+}
+.btn-abrir{
+    width: 65px;
+}
+.btn-abrir:hover{
+    opacity: 70%;
+    cursor:pointer;
+}
+
+
+/*SUB CABEÇALHO*/
+
+.subheader {
+    height: 3vh;
+    background-color: transparent;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    bottom: -25px;
+    left: 0rem;
+    gap: 70px;
+}
+
+.link-subheader {
+    color: white;
+    font-size: 1.7rem;
+    text-decoration: none;
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Caixa de links com efeito hover */
+.links-box {
+    display: flex;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: 'Questrial', sans-serif;
+    font-size: 1.2rem;
+    transition: color 400ms, left 900ms; /* Transição de cor e posição */
+    position: relative;
+    left: -18px;
+}
+
+.links-box:hover {
+    color: rgb(210, 210, 210);
+}
+
+.div-boxlinks {
+    position: absolute;
+    border-radius: 2%;
+    padding: 10px;
+    background-color: transparent;
+    top: 100%;
+    left: 0;
+    opacity: 0; /* Oculta inicialmente */
+    visibility: hidden; /* Evita o espaço quando oculto */
+    transition: opacity 0.4s ease, visibility 0.4s ease; /* Transição suave */
+}
+
+.div-boxlink-main {
+    position: relative;
+}
+
+.div-boxlink-main:hover .div-boxlinks {
+    opacity: 1; /* Mostra suavemente */
+    visibility: visible; /* Tornando visível durante o hover */
+}
+
+/*Carrossel de imagens*/
+
+.slider{
+    margin-top:300px;
+    width:100%;
+    height:60rem;
+    padding:0 !important;
+    overflow:hidden;
+}
+.slider-content{
+    width:400%;
+    height:auto;
+    display:flex;
+}
+.slider-content input, .img-mobile{
+    display:none;
+}
+.slide-box{
+    width:25%;
+    height:auto;
+    text-align:center;
+    transition:1s;
+}
+.slide-box img{
+    width:100%;
+    color:white;
+    font-family:"Questrial",sans-serif;
+    align-items:center;
+}
+.nav-manual, .nav-auto{
+    position:absolute;
+    width:100%;
+    margin-top:39%;
+    display:flex;
+    justify-content:center;
+    display:none;
+}
+.nav-manual .manual-btn, .nav-auto div{
+    border:2px solid rgb(0, 92, 0);
+    padding:10px;
+    border-radius:50%;
+    cursor:pointer;
+    transition:0.02s;
+}
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
+    margin-right:10px;
+}
+.nav-manual .manual-btn:hover{
+    background-color:rgb(0, 112, 15);
+}
+#radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3{
+    background-color:rgb(0, 112, 15 );
+}
+#radio1:checked ~ .primeiro{
+    margin-left:0%;
+}
+#radio2:checked ~ .primeiro{
+    margin-left:-25%;
+}
+#radio3:checked ~ .primeiro{
+    margin-left:-50%;
+}
+
+
+
+/*RESPONSIVIDADE*/
+
+
+
+@media screen and (max-width:1195px){
+.img-desktop{
+display:none;
+}
+.img-mobile{
+display:block;
+}
+
+.nav-auto, .nav-manual{
+margin-top:58%;
+}
+}
+.img-desktop{
+height:520px;
+}
+
+/*SECTION PROPAGANDA*/
+
+
+.section-decoration{
+    color:var(--building-color4);
+}
+.title-decoration-section{
+    font-size:2rem;
+    color:var(--building-color4);
+    font-family: "Questrial", sans-serif;
+    text-align:center;
+}
+.title-decoration-section span{
+    color:rgba(0, 255, 234, 0.568);
+}
+.text-section-decoration{
+    font-size:1.8rem;
+    font-weight:normal;
+    font-family:"Questrial", sans-serif;
+    text-align:center;
+}
+.text-section-decoration a{
+    font-size:2rem;
+    font-weight:normal;
+    font-family:"Questrial", sans-serif;
+    text-decoration:none;
+    color:white;
+    opacity:70%;
+    transition:  700ms;
+}
+.text-section-decoration a:hover{
+    color:rgb(43, 110, 105);
+}
+
+
+/*CARROSSEL 02*/
+
+
+.title-section-comentarios{
+    color:white;
+    font-family: "Questrial", sans-serif;
+    font-size:2.5rem;
+    text-align:center;
+}
+/* Carrossel Container */
+.carrossel-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* Carrossel */
+.carrossel {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Transição suave */
+    will-change: transform; /* Melhor performance de animação */
+}
+
+/* Slide */
+.slide {
+    position: relative;
+    flex: 0 0 100%; /* Garante que cada slide ocupe 100% da largura */
+    padding: 30px;
+    border-radius: 15px;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+}
+
+/* Comentário dentro do slide */
+.comentario {
+    background-color: rgba(255, 255, 255, 0.8); /* Caixa do comentário com fundo suave */
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%; /* Ajusta a largura do comentário */
+    max-width: 700px; /* Define a largura máxima para garantir que não ultrapasse o slide */
+    margin: auto;
+    font-family: "Questrial", sans-serif;
+    color: black;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    word-wrap: break-word; /* Quebra as palavras longas que ultrapassam o espaço */
+}
+
+/* Botões de navegação */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: none;
+}
+
+/* Posição dos botões */
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/*FOOTER*/
+
+footer{
+    padding:80px;
+    height:100px;
+}
+.title-links-footer {
+    color:white;
+    font-size: 2rem;
+    font-family: "Questrial", sans-serif;
+    font-weight: normal;
+    cursor: context-menu;
+    font-weight:normal;
+}
+.links-test-footer {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Quando o título é "hovered", mostra os links */
+
+.div-title-links:hover .links-test-footer {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.links-footer {
+    text-decoration: none;
+    display: flex;
+    font-size: 1rem;
+    color: white;
+    transition: color 400ms;
+    font-family:"Questrial", sans-serif;
+    margin-top:5px;
+}
+
+.links-footer:hover {
+    color: rgb(43, 110, 105);
+}
+
+.divlinks-geral {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+
+.div-copy-footer{
+    text-align:center;
+    padding-top:50px;
+}
+.text-footer-copy{
+    font-size:1rem;
+    color:
+    white;
+    font-weight:normal;
+    font-family:"Questrial", sans-serif;
+}
